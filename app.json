@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/cate"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#0168B7",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "潮州話羅馬字注音方案",
+    "backgroundColor": "#f1f2f3",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar":{
+    "position": "top",
+    "color": "#ffffff",
+    "backgroundColor": "#0168B7",
+    "selectedColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "封面"
+    }, {
+      "pagePath": "pages/index/cate",
+      "text": "目錄"
+    }]
+  },
+  "debug": false
+}

@@ -1,0 +1,36 @@
+<!--index.wxml bindtap="previewImage"-->
+
+<view class="container">
+  <view class="book-info">
+    <image class="book-pic" src="{{book.pic}}" data-src="{{book.pic}}" background-size="cover" mode="scaleToFill" ></image>
+    <view class="dangertip">禁止用於商業</view>
+    <text class="book-title">{{book.title}}</text>
+    <text class="book-title">{{book.english}}</text>
+
+  <view class="action weui-flex">
+    <view>
+      <button size="mini" type="primary" class="weui-btn" bindtap="enter">即刻閱讀</button>
+    </view>
+    <view>
+      <button size="mini" type="default" plain="true" open-type="contact" class="weui-btn weui-btn_d">在線聯繫</button>
+    </view>
+  </view>
+  
+  </view>
+
+  <view class="weui-panel" style="width: 90%;margin: 2px auto;wxcs_style_margin: 2rpx auto;">
+    <view class="weui-panel__hd">编者信息</view>
+    <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+            <text class="weui-media-box__info" selectable>第二版·丙申孟冬\n編者： 潮州話正音正字促進會\n參與者： 潮正會全體成員\n\n音频來源：\nMogher潮州母語網\n台灣閩南語羅馬字拼音教學網\n\n參考資料：\n1. 前人「潮州十五音」\n2.「海墘閩語論壇」之「MTR方案」\n3.《卓威廉辭典》及《菲爾德字典》\n\n新浪微博： @潮州話正音正字促進會\n微信公眾號： HiTeochew\n官方網站： http://teochew.pw\n電子郵箱： hi@teochew.pw</text>
+        </view>
+    </view>
+  </view>
+
+  <view class="weui-footer">
+    <view class="weui-footer__text">{{book.author}}</view>
+    <view class="weui-footer__text">Teochew Association For Orthoepy & Orthography</view>
+    <view class="weui-footer__text">V0.0.4</view>
+  </view>
+
+</view>

@@ -1,0 +1,65 @@
+<!--pages/index/cate.wxml-->
+
+<scroll-view scroll-y="true" scroll-with-animation="true" enable-back-to-top="true" scroll-into-view="{{lift_into}}">
+
+  <view class="tip-top" style="display: {{tiptopshow}}" bindtap="hideTip"><text>tip:點擊各項可查看詳情并收聽發音；點擊連讀按鈕可收聽本類別所有項的發音。</text></view>
+
+<view class="container">
+
+  <block wx:for="{{list}}" wx:for-index="list_index" wx:for-item="list_item">
+  
+    <text id="{{list_item.ab[0].cate}}" data-id="{{list_item.ab[0].id}}" data-cate="{{list_item.ab[0].cate}}" class="item_title weui-panel__hd" style="text-align:center;">{{list_item.ab[0].name}}{{list_item.ab[0].sname}}</text>
+<text class="tip-r" style="color:#b3b3b3;">▶ 點擊下方各項收聽發音；長按可查看詳情</text>
+
+    <view class="weui-grids t_list" style="background-color:{{list_item.ab[0].coverbgcolor}};">
+      <block wx:for="{{list_item.ab[1].content}}"  wx:for-index="list_c_index" wx:for-item="list_c_item">
+      <block wx:if="{{list_c_item.voice}}">
+        <navigator id="{{list_c_item.id}}_n" data-id="{{list_c_index}}" data-cate="{{list_item.ab[0].cate}}" data-cateid="{{list_item.ab[0].id}}" class="weui-grid voicelogo" catchtap="playDvoice" catchlongtap="showDetail">
+             <text class="weui-grid__label">{{list_c_item.id}}</text>
+             <text class="weui-grid__label">{{list_c_item.hto}}</text>
+              <text class="weui-grid__label">{{list_c_item.name}}</text>
+        </navigator>
+     </block>
+     <block wx:else>
+        <navigator id="{{list_c_item.id}}_n" data-id="{{list_c_index}}" data-cate="{{list_item.ab[0].cate}}" data-cateid="{{list_item.ab[0].id}}" class="weui-grid" bindtap="showDetail" >
+             <text class="weui-grid__label">{{list_c_item.id}}</text>
+             <text class="weui-grid__label">{{list_c_item.hto}}</text>
+              <text class="weui-grid__label">{{list_c_item.name}}</text>
+        </navigator>
+     </block>
+      </block>
+
+      <view id="cover" data-cateid="{{list_item.ab[0].id}}" class="cover" style="display:{{list_item.ab[0].coverdisplay}};">
+        <view class="cover_c" data-cateid="{{list_item.ab[0].id}}" style="top:{{list_item.ab[0].coverTop}};" selectable bindtap="hideCover"><view class="close-btn">×</view><text>{{list_item.ab[0].coverdata}}</text><text class="tip-r">tip:再次點擊即可關閉</text></view>
+        </view>
+    </view>
+
+    <view class="lplay-btn weui-flex "><button size="mini" type="primary" class="weui-btn" data-cateid="{{list_item.ab[0].id}}" bindtap="lplay">▶ 連讀</button>
+    </view>
+    <text class="tip-l" style="width:90%;">tip:將小程序置於聊天頂部後，點擊連讀可返回聊天界面邊聽邊交流。</text>
+
+    <block wx:for="{{list_item.ab[2].explain}}"  wx:for-index="list_ex_index" wx:for-item="list_ex_item">
+    <view id="{{list_ex_item.id}}" class="weui-panel explian_panel" style="width: 90%;">
+    <view class="weui-panel__hd">{{list_ex_item.title}}</view>
+    <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+            <text class="weui-media-box__info" selectable>{{list_ex_item.content}}</text>
+        </view>
+    </view>
+  </view>
+  </block>
+
+      <!--<view class="cornerbtn bc_red" type="red" bindtap="showtActionsheet"></view>-->
+  </block>
+
+  <view class="audioplayer">
+    <audio id="audioplayer"></audio>
+  </view>
+
+  <view class="weui-footer">
+    <text class="weui-footer__text">本出版物的內容僅供參考\n请以實際使用時之口音規則為準\n</text>
+    <text class="weui-footer__text">潮正會(簡稱)享有對本出版物上內容的最終解釋權\n</text>
+    <text class="weui-footer__text">＊內部版本號：20170114001＊\n僅限學術交流\n商業用途請與我們聯繫</text>
+  </view>
+</view>
+</scroll-view>

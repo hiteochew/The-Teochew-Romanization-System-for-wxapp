@@ -1,0 +1,105 @@
+/* pages/index/cate.wxss */
+
+/*.container{
+    padding: 1rem 0 1rem 0;
+}*/
+
+scroll-view{
+  top:0;left:0;margin: 0;padding: 0;
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+}
+.explian_panel{
+  margin:0.5rem auto;
+}
+.weui-grids,.weui-flex{
+    width: 90%;
+}
+.weui-grids{
+    margin: 12rpx;
+    background: #fff;
+    /*position: relative;*/
+    overflow: visible;
+}
+.voicelogo::after{
+  display:block;
+  /*content:'♪';*/
+  content: "🎧";
+  font-size: 0.6rem;
+  text-align:right;
+  right:0.5rem;
+  position:absolute;
+  bottom:0.2rem;
+  color:rgba(9,187,7,0.3);
+}
+.item_title{
+  margin: 2rem auto 0.2rem;
+}
+.cover{
+    width: 100%;
+    position: static;
+}
+.cover_1{
+    width: 90%;height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 1;
+}
+.cover_c{
+    position: absolute;
+    width: 90%;
+    height: auto;
+    padding: 1rem ;
+    margin: 0px auto;
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    z-index: 12;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-shadow: #0168B7 0px 0px 1px 1px;
+    /*font-size:0.8rem;*/
+    line-height:1.75;
+    /*background-image: url('http://poetry.teochew.pw/use/poetry/images/logomh.png');
+    background-size: 60% ;
+    background-repeat: no-repeat;
+    background-position: bottom right;*/
+}
+.cover_c text{
+    display:flex;
+
+}
+
+
+.close-btn{
+position:relative;
+/*top:-22rpx;
+background:#f00;
+right:-3rpx;*/
+cursor: pointer;
+color:#b5b5b5;
+font-size:40rpx;
+font-weight:bold;
+overflow:hidden;
+float:right;
+width:55rpx;
+height:65rpx;
+text-align:center;
+margin-top:-0.7rem;
+margin-right:-0.7rem;
+}
+
+.audioplayer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.lplay-btn button{
+    width: 100%;
+   margin:0.5rem auto 0.5rem auto !important;
+}
+
